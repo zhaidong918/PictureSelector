@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -13,7 +14,21 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
+            android:src="@color/btn_enabled_true"
             app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_selected"
+            android:layout_width="@dimen/space_16"
+            android:layout_height="@dimen/space_16"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_margin="@dimen/space_6"
+            tools:text="1"
+            android:textColor="@android:color/white"
+            android:textSize="@dimen/font_10"
+            android:gravity="center"
+            android:background="@drawable/bg_white_oval"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

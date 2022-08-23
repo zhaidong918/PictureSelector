@@ -8,6 +8,19 @@
         <entry key="..\:/advertiseV2/PictureSelector/pictureselector/src/main/res/layout/activity_picture_list.xml" value="0.3619791666666667" />
         <entry key="..\:/advertiseV2/PictureSelector/pictureselector/src/main/res/layout/activity_picture_preview.xml" value="0.2651632970451011" />
         <entry key="..\:/advertiseV2/PictureSelector/pictureselector/src/main/res/layout/item_picture_list_layout.xml" value="0.3619791666666667" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/bg_button.xml" value="0.2805" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/bg_folder.xml" value="0.2805" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/bg_green_oval.xml" value="0.3235" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/bg_white_cycle.xml" value="0.3235" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/bg_white_oval.xml" value="0.2065" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/btn_selector.xml" value="0.3235" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/icon_back.xml" value="0.332" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/icon_close.xml" value="0.1" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/icon_down_arrow.xml" value="0.1" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/txt_selector.xml" value="0.1" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/layout/activity_picture_list.xml" value="0.6" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/layout/activity_picture_preview.xml" value="0.5541666666666667" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/layout/item_picture_list_layout.xml" value="0.5" />
       </map>
     </option>
   </component>

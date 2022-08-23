@@ -33,7 +33,9 @@ data class PictureItem(
     var width: Int,
     var height: Int,
     var mimeType : String,
-    var addTime: Long
+    var addTime: Long,
+    var position: Int = -1,
+    var selectIndex: Int = -1
 ) : Parcelable {
 
     /** 图片的路径和创建时间相同就认为是同一张图片  */
@@ -45,5 +47,6 @@ data class PictureItem(
         return super.equals(o)
     }
 }
+
 
 
