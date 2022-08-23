@@ -18,8 +18,11 @@
         <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/icon_close.xml" value="0.1" />
         <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/icon_down_arrow.xml" value="0.1" />
         <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/drawable/txt_selector.xml" value="0.1" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/layout/activity_picture.xml" value="0.5431893687707641" />
         <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/layout/activity_picture_list.xml" value="0.6" />
         <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/layout/activity_picture_preview.xml" value="0.5541666666666667" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/layout/folder_layout.xml" value="0.4032059186189889" />
+        <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/layout/item_folder_layout.xml" value="0.6666666666666666" />
         <entry key="..\:/work/PictureSelector/pictureselector/src/main/res/layout/item_picture_list_layout.xml" value="0.5" />
       </map>
     </option>

@@ -9,6 +9,7 @@
         android:background="@color/bg">
 
         <LinearLayout
+            android:id="@+id/layout_title"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:gravity="center_vertical"
@@ -23,19 +24,34 @@
                 android:padding="@dimen/space_12"
                 android:src="@drawable/icon_close" />
 
-            <TextView
+            <LinearLayout
+                android:id="@+id/layout_folder"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:gravity="center_vertical"
-                android:text="所有照片"
-                android:paddingStart="@dimen/space_16"
-                android:paddingEnd="@dimen/space_8"
-                android:textSize="@dimen/font_14"
                 android:background="@drawable/bg_folder"
-                android:textColor="@android:color/white"
+                android:paddingStart="@dimen/space_16"
+                android:gravity="center_vertical"
                 android:layout_marginHorizontal="@dimen/space_10"
-                android:drawableEnd="@drawable/icon_down_arrow"
-                android:drawablePadding="@dimen/space_4"/>
+                android:paddingEnd="@dimen/space_8">
+
+                <TextView
+                    android:id="@+id/tv_folder"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:text="所有照片"
+                    android:textSize="@dimen/font_14"
+                    android:textColor="@android:color/white" />
+
+                <ImageView
+                    android:id="@+id/iv_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/space_4"
+                    android:src="@drawable/icon_down_arrow"/>
+
+            </LinearLayout>
+
 
             <View
                 android:layout_width="0dp"

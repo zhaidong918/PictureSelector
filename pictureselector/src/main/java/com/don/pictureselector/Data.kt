@@ -10,7 +10,7 @@ data class PictureFolder(
     val name: String? = null,
     val path: String? = null,
     val cover: PictureItem? = null,
-    val pictureList: List<PictureItem>? = null,
+    val pictureList: MutableList<PictureItem>? = null,
 ): Parcelable {
 
     /** 只要文件夹的路径和名字相同，就认为是相同的文件夹  */

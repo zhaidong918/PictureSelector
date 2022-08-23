@@ -1,12 +1,8 @@
 package com.don.pictureselector.ui
 
 import android.app.Activity
-import android.content.Context
-import android.content.Intent
 import android.os.Bundle
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityOptionsCompat
 import androidx.core.content.ContextCompat
 import androidx.lifecycle.lifecycleScope
 import com.bumptech.glide.Glide
@@ -14,6 +10,7 @@ import com.don.pictureselector.PictureFactory
 import com.don.pictureselector.PictureItem
 import com.don.pictureselector.R
 import com.don.pictureselector.databinding.ActivityPicturePreviewBinding
+import com.don.pictureselector.setOnAntiShakeClickListener
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -24,23 +21,7 @@ import kotlinx.coroutines.launch
 class PicturePreviewActivity : AppCompatActivity() {
 
     companion object {
-
         var pictureItem: PictureItem? = null
-
-        fun actionStart(
-            context: Context,
-            imageView: ImageView,
-        ) {
-            val intent = Intent(context, PicturePreviewActivity::class.java)
-            context.startActivity(
-                intent,
-                ActivityOptionsCompat.makeSceneTransitionAnimation(
-                    (context as Activity),
-                    imageView,
-                    context.getString(R.string.share)
-                ).toBundle()
-            )
-        }
     }
 
     private val binding by lazy {
@@ -51,25 +32,50 @@ class PicturePreviewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         window.statusBarColor = ContextCompat.getColor(this, R.color.bg)
         window.navigationBarColor = ContextCompat.getColor(this, R.color.bg)
-        setContentView(binding.root.apply {
-            binding.lifecycleOwner = this@PicturePreviewActivity
-        })
+        setContentView(binding.root)
 
-        pictureItem?.uri?.apply {
-            binding.iv.let { Glide.with(it).load(this).into(it) }
-        }
+        initBinding()
+        initFlow()
+    }
 
-        binding.ivBack.setOnClickListener {
-            finishAfterTransition()
-        }
+    private fun initBinding(){
 
-        binding.layoutSelect.setOnClickListener {
-            pictureItem?.apply {
-                PictureFactory.select(this){}
+        binding.apply {
+
+            ivBack.setOnAntiShakeClickListener {
+                finishAfterTransition()
             }
-        }
 
-        updateSelectState()
+            pictureItem?.uri?.apply {
+                iv.let { Glide.with(it).load(this).into(it) }
+            }
+
+            layoutSelect.setOnAntiShakeClickListener {
+                pictureItem?.apply {
+                    PictureFactory.select(this){}
+                }
+            }
+
+            tvSelectComplete.setOnAntiShakeClickListener{
+
+                if(PictureFactory.getSelectData().isEmpty()){
+                    pictureItem?.apply {
+                        PictureFactory.select(this){}
+                    }
+                }
+
+                setResult(Activity.RESULT_OK)
+                finish()
+
+            }
+
+            updateSelectState()
+        }
+    }
+
+
+    private fun initFlow(){
+
         lifecycleScope.launch {
             PictureFactory.selectCountFlow.collect {
                 binding.tvSelectComplete.text =
@@ -86,6 +92,12 @@ class PicturePreviewActivity : AppCompatActivity() {
             }
             else R.drawable.bg_white_oval
         )
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+
+        pictureItem = null
     }
 
     override fun onBackPressed() {

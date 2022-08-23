@@ -9,10 +9,10 @@
         <item name="android:windowBackground">@android:color/black</item>
     </style>
 
-    <style name="popupwindow_anim_style">
-        <!-- 指定显示的动画xml -->
-        <item name="android:windowEnterAnimation">@anim/show_from_bottom</item>
-        <!-- 指定消失的动画xml -->
-        <item name="android:windowExitAnimation">@anim/hide_to_bottom</item>
+    <!-- 预览界面动画 -->
+    <style name="AnimationPreview">
+        <item name="android:windowEnterAnimation">@anim/anim_scale_in</item>
+        <item name="android:windowExitAnimation">@anim/anim_scale_out</item>
     </style>
+
 </resources>

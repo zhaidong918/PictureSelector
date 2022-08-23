@@ -62,7 +62,8 @@
             android:id="@+id/layout_select"
             android:layout_width="wrap_content"
             android:layout_height="@dimen/space_40"
-            android:layout_gravity="end"
+            android:layout_gravity="center_horizontal"
+            android:paddingHorizontal="@dimen/space_16"
             android:gravity="center_vertical"
             android:background="@color/bg">
 
@@ -78,8 +79,6 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:layout_marginStart="@dimen/space_8"
-                android:layout_marginEnd="@dimen/space_16"
-                android:paddingVertical="@dimen/space_8"
                 android:text="@string/select"
                 android:textColor="@android:color/white"
                 android:textSize="@dimen/font_14" />

@@ -3,7 +3,7 @@
     package="com.don.pictureselector">
 
     <application>
-        <activity android:name=".ui.PictureListActivity"
+        <activity android:name=".ui.PictureActivity"
             android:theme="@style/Theme" />
         <activity android:name=".ui.PicturePreviewActivity"
             android:theme="@style/BlackTheme" />

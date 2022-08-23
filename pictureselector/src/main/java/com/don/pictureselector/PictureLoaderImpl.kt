@@ -23,7 +23,6 @@ enum class LoaderCategory{
 class PictureLoaderImpl(
     private var activity: AppCompatActivity,
     val folderPath: String?= null,
-    val callBack: (MutableList<PictureItem>) -> Unit
 ) : LoaderManager.LoaderCallbacks<Cursor> {
 
     companion object{
@@ -75,11 +74,9 @@ class PictureLoaderImpl(
         }
     }
 
-
-    private val folderList = mutableListOf<PictureFolder>()
-
     override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
-        folderList.clear()
+
+        val folderList = mutableListOf<PictureFolder>()
 
         data?.apply {
             val pictureList = mutableListOf<PictureItem>().apply {
@@ -111,12 +108,20 @@ class PictureLoaderImpl(
                         name = File(it.key).name,
                         path = it.key,
                         cover = it.value.firstOrNull(),
-                        pictureList = it.value
+                        pictureList = it.value.toMutableList()
                     )
                 )
             }
             Log.e("PictureLoaderImpl", "callBack -> ${pictureList.size}")
-            callBack.invoke(pictureList)
+
+            PictureFactory.setFolderData(folderList.apply {
+                add(0, PictureFolder(
+                    name = "所有图片",
+                    path = "/",
+                    cover = pictureList.firstOrNull(),
+                    pictureList = pictureList
+                ))
+            })
         }
     }
 
