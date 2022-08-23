@@ -94,15 +94,15 @@ class PictureAdapter(
             }
 
             if(data.selectIndex > 0){
-                tvSelected.setBackgroundResource(R.drawable.bg_green_oval)
-                tvSelected.text = data.selectIndex.toString()
+                tvSelect.setBackgroundResource(R.drawable.bg_green_oval)
+                tvSelect.text = data.selectIndex.toString()
             }
             else {
-                tvSelected.setBackgroundResource(R.drawable.bg_white_oval)
-                tvSelected.text = ""
+                tvSelect.setBackgroundResource(R.drawable.bg_white_oval)
+                tvSelect.text = ""
             }
 
-            tvSelected.setOnClickListener {
+            layoutSelect.setOnClickListener {
                 PictureFactory.select(data){ data ->
 
                     if(data.isEmpty()){
